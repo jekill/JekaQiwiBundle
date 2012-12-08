@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 
 <container xmlns="http://symfony.com/schema/dic/services"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <!--
     <parameters>
@@ -17,4 +17,13 @@
         </service>
     </services>
     -->
+    <parameters>
+        <parameter key="jeka.qiwi.client_class">Jeka\QiwiBundle\Service\Client</parameter>
+    </parameters>
+    <services>
+        <service id="jeka.qiwi_client" class="%jeka.qiwi.client_class%">
+            <argument>%jeka.qiwi.login%</argument>
+            <argument>%jeka.qiwi.password%</argument>
+        </service>
+    </services>
 </container>
